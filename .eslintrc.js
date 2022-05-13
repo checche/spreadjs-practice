@@ -4,21 +4,67 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    'plugin:react/recommended',
-    'airbnb',
+    "plugin:react/recommended",
+    "airbnb",
+    "react-app",
+    "react-app/jest",
+    "prettier",
   ],
-  parser: '@typescript-eslint/parser',
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+    ecmaVersion: "latest",
+    sourceType: "module",
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-  ],
+  plugins: ["react", "@typescript-eslint"],
   rules: {
+    "react/jsx-filename-extension": [1, { extensions: [".jsx", ".tsx"] }],
+    "react/react-in-jsx-scope": "off",
+    "import/order": [
+      "error",
+      {
+        groups: [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type",
+        ],
+        pathGroups: [
+          {
+            pattern: "@src/**",
+            group: "parent",
+            position: "before",
+          },
+        ],
+        alphabetize: {
+          order: "asc",
+        },
+        "newlines-between": "always",
+      },
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        js: "never",
+        jsx: "never",
+        ts: "never",
+        tsx: "never",
+      },
+    ],
+  },
+  settings: {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"],
+    },
+    "import/resolver": {
+      typescript: { alwaysTryTypes: true },
+    },
   },
 };
