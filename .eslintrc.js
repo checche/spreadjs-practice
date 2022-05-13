@@ -8,6 +8,8 @@ module.exports = {
     "airbnb",
     "react-app",
     "react-app/jest",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "prettier",
   ],
   parser: "@typescript-eslint/parser",
@@ -37,7 +39,7 @@ module.exports = {
         ],
         pathGroups: [
           {
-            pattern: "@src/**",
+            pattern: "@alias/**",
             group: "parent",
             position: "before",
           },
