@@ -3,7 +3,7 @@ import "@grapecity/spread-sheets-resources-ja";
 import { SpreadSheets } from "@grapecity/spread-sheets-react";
 import "@grapecity/spread-sheets/styles/gc.spread.sheets.excel2013white.css";
 
-import "./App.css";
+import "App.css";
 // 日本語カルチャを設定します
 GC.Spread.Common.CultureManager.culture("ja-jp");
 
